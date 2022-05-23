@@ -1,0 +1,20 @@
+{
+  "name": "chatting-scervive-node",
+  "version": "1.0.0",
+  "description": "A simple message chat api using nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaynetpc/chatting-scervive-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaynetpc/chatting-scervive-node/issues"
+  },
+  "homepage": "https://github.com/kaynetpc/chatting-scervive-node#readme"
+}
