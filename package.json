@@ -4,7 +4,8 @@
   "description": "A simple message chat api using nodejs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,13 @@
   "bugs": {
     "url": "https://github.com/kaynetpc/chatting-scervive-node/issues"
   },
-  "homepage": "https://github.com/kaynetpc/chatting-scervive-node#readme"
+  "homepage": "https://github.com/kaynetpc/chatting-scervive-node#readme",
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  }
 }
