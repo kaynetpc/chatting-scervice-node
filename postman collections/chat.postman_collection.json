@@ -1,0 +1,643 @@
+{
+	"info": {
+		"_postman_id": "cecfb89c-11a8-4a67-befa-b3b335971b95",
+		"name": "chat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11038820"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Joy\",\r\n    \"password\": \"nbnbvhj\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success user registeration api",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"kayode\",\r\n    \"password\": \"mypass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "292"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"124-M9a3TRfeczWmU7Z3TXQJyKmnbRM\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 May 2022 22:25:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"data\": {\n        \"message\": \"User created\",\n        \"statusCode\": 201,\n        \"data\": {\n            \"name\": \"kayode\",\n            \"password\": \"$2b$04$DTFambFhfrpcFBqplX0D/u/hg6gDWprL1zzVWwO9X2GA39kbrAd8K\",\n            \"inbox\": [],\n            \"outbox\": [],\n            \"_id\": \"628d5b54dc8c0cc387c973f7\",\n            \"__v\": 0\n        },\n        \"error\": false\n    },\n    \"message\": \"\",\n    \"status\": 200,\n    \"statusText\": \"success\"\n}"
+				},
+				{
+					"name": "User already exist response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"kayode\",\r\n    \"password\": \"mypass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "146"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"92-RQyKQgNeTaoAqKFuUL7NRqjpx1A\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 May 2022 22:27:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"data\": {\n        \"message\": \"User already exist\",\n        \"statusCode\": 409,\n        \"data\": null,\n        \"error\": true\n    },\n    \"message\": \"\",\n    \"status\": 200,\n    \"statusText\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create conversation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"members\": [\"628d6363673dd546070f85fe\", \"628d63ab673dd546070f8602\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/conversation",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"conversation"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Create conversation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"members\": [\"628d6363673dd546070f85fe\", \"628d63ab673dd546070f8602\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/conversation",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"conversation"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "331"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14b-4k16Hc7X6s7yNfgTOVgAe+R/MmQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 May 2022 23:14:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"data\": {\n        \"message\": \"Conversation Created\",\n        \"data\": {\n            \"members\": [\n                \"628d6363673dd546070f85fe\",\n                \"628d63ab673dd546070f8602\"\n            ],\n            \"_id\": \"628d66d874c8d23ffdf6aa31\",\n            \"createdAt\": \"2022-05-24T23:14:32.691Z\",\n            \"updatedAt\": \"2022-05-24T23:14:32.691Z\",\n            \"__v\": 0\n        },\n        \"error\": false,\n        \"statusCode\": 200\n    },\n    \"message\": \"\",\n    \"status\": 200,\n    \"statusText\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "send message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\r\n    \"from_user\": \"628d6363673dd546070f85fe\",\r\n    \"to_user\": \"628d63ab673dd546070f8602\",\r\n    \"contents\": \"How are u doing\",\r\n    \"read_at\": \"\",\r\n    \"read_status\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/message/send",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"message",
+						"send"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success send message between two user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\r\n    \"from_user\": \"628d6363673dd546070f85fe\",\r\n    \"to_user\": \"628d63ab673dd546070f8602\",\r\n    \"contents\": \"How are u doing\",\r\n    \"read_at\": \"\",\r\n    \"read_status\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/message/send",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"message",
+								"send"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "439"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b7-qY7pxJntlSdozMPbYv5oKNPId3U\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 May 2022 00:51:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"data\": {\n        \"message\": \"Message sent\",\n        \"data\": {\n            \"contents\": \"How are u doing\",\n            \"read_at\": \"\",\n            \"from_user\": \"628d6363673dd546070f85fe\",\n            \"to_user\": \"628d63ab673dd546070f8602\",\n            \"read_status\": false,\n            \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n            \"_id\": \"628d7daf09996e0218ba4096\",\n            \"createdAt\": \"2022-05-25T00:51:59.137Z\",\n            \"updatedAt\": \"2022-05-25T00:51:59.137Z\",\n            \"__v\": 0\n        },\n        \"error\": false,\n        \"statusCode\": 200\n    },\n    \"message\": \"\",\n    \"status\": 200,\n    \"statusText\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"kayode\",\r\n    \"password\": \"myPass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"kayode\",\r\n    \"password\": \"myPass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "702"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2be-TQzqrN884P9OkcIfL8LOjlR6JTI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 May 2022 00:55:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"data\": {\n        \"message\": \"Login Success\",\n        \"statusCode\": 200,\n        \"data\": {\n            \"_id\": \"628d6363673dd546070f85fe\",\n            \"name\": \"kayode\",\n            \"password\": \"$2b$04$n8tLTLIzjRpAx6gKozuaDejFOgfyEoeqLDU0FrqJq5beMprRL3jRK\",\n            \"inbox\": [],\n            \"outbox\": [],\n            \"__v\": 0,\n            \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia2F5b2RlIiwidXNlcklkIjoiNjI4ZDYzNjM2NzNkZDU0NjA3MGY4NWZlIiwiaWF0IjoxNjUzNDQwMTM3LCJleHAiOjE2NTM0NDEzMzd9.9m6eqVDThJ3tA_myorKfSVlZIAJGTvMJVkYBYCS105g\",\n            \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia2F5b2RlIiwidXNlcklkIjoiNjI4ZDYzNjM2NzNkZDU0NjA3MGY4NWZlIiwiaWF0IjoxNjUzNDQwMTM3LCJleHAiOjE2NTM0NDI4Mzd9.-1vldu41RfwLOx-kIBfqIIiAGJs49e1sdotMqsuWRdk\"\n        }\n    },\n    \"message\": \"\",\n    \"status\": 200,\n    \"statusText\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Conversations within two user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/message/list?conversationId=628d66d874c8d23ffdf6aa31",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"message",
+						"list"
+					],
+					"query": [
+						{
+							"key": "conversationId",
+							"value": "628d66d874c8d23ffdf6aa31"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Messages by conversationID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/message/list?conversationId=628d66d874c8d23ffdf6aa31",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"message",
+								"list"
+							],
+							"query": [
+								{
+									"key": "conversationId",
+									"value": "628d66d874c8d23ffdf6aa31"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3614"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e1e-PmfU4JcKClIXNWlHLvJ/10p7vnA\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 May 2022 00:57:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"data\": {\n        \"message\": \"Message retrieved\",\n        \"data\": [\n            {\n                \"_id\": \"628d6f41c16fde7451b2b2f0\",\n                \"contents\": \"How are u doing\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-24T23:50:25.648Z\",\n                \"updatedAt\": \"2022-05-24T23:50:25.648Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d6fd5ba190b76312cdbf0\",\n                \"contents\": \"How are u doing\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-24T23:52:53.638Z\",\n                \"updatedAt\": \"2022-05-24T23:52:53.638Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d6fd7ba190b76312cdbf2\",\n                \"contents\": \"How are u doing\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-24T23:52:55.715Z\",\n                \"updatedAt\": \"2022-05-24T23:52:55.715Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d6fd8ba190b76312cdbf4\",\n                \"contents\": \"How are u doing\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-24T23:52:56.748Z\",\n                \"updatedAt\": \"2022-05-24T23:52:56.748Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d70339c5bc38fcbe492ad\",\n                \"contents\": \"How are u doing\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-24T23:54:27.167Z\",\n                \"updatedAt\": \"2022-05-24T23:54:27.167Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d709c9c5bc38fcbe492af\",\n                \"contents\": \"How are u doing\",\n                \"read_at\": \"\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"read_status\": false,\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-24T23:56:12.541Z\",\n                \"updatedAt\": \"2022-05-24T23:56:12.541Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d765de9c9579d09371d98\",\n                \"contents\": \"How are u doing\",\n                \"read_at\": \"\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"read_status\": false,\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-25T00:20:45.711Z\",\n                \"updatedAt\": \"2022-05-25T00:20:45.711Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d76cfcc85142b474332d3\",\n                \"contents\": \"How are u doing\",\n                \"read_at\": \"\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"read_status\": false,\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-25T00:22:39.676Z\",\n                \"updatedAt\": \"2022-05-25T00:22:39.676Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d788c39768ece0dba89d9\",\n                \"contents\": \"How are u doing\",\n                \"read_at\": \"\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"read_status\": false,\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-25T00:30:04.524Z\",\n                \"updatedAt\": \"2022-05-25T00:30:04.524Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d7a02614b27488dac1552\",\n                \"contents\": \"How are u doing\",\n                \"read_at\": \"\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"read_status\": false,\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-25T00:36:18.438Z\",\n                \"updatedAt\": \"2022-05-25T00:36:18.438Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d7c33daeb9d1d5bd39066\",\n                \"contents\": \"How are u doing\",\n                \"read_at\": \"\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"read_status\": false,\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-25T00:45:39.776Z\",\n                \"updatedAt\": \"2022-05-25T00:45:39.776Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d7daf09996e0218ba4096\",\n                \"contents\": \"How are u doing\",\n                \"read_at\": \"\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"read_status\": false,\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-25T00:51:59.137Z\",\n                \"updatedAt\": \"2022-05-25T00:51:59.137Z\",\n                \"__v\": 0\n            }\n        ],\n        \"error\": false,\n        \"statusCode\": 200\n    },\n    \"message\": \"\",\n    \"status\": 200,\n    \"statusText\": \"success\"\n}"
+				},
+				{
+					"name": "Success with read Conversations within two user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/message/list?conversationId=628d66d874c8d23ffdf6aa31",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"message",
+								"list"
+							],
+							"query": [
+								{
+									"key": "conversationId",
+									"value": "628d66d874c8d23ffdf6aa31"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3702"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e76-kKYs4BY58g7YkyvDGSURisbVCLk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 May 2022 01:17:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"data\": {\n        \"message\": \"Message retrieved\",\n        \"data\": [\n            {\n                \"_id\": \"628d6f41c16fde7451b2b2f0\",\n                \"contents\": \"How are u doing\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-24T23:50:25.648Z\",\n                \"updatedAt\": \"2022-05-25T01:17:14.367Z\",\n                \"__v\": 0,\n                \"read_status\": true\n            },\n            {\n                \"_id\": \"628d6fd5ba190b76312cdbf0\",\n                \"contents\": \"How are u doing\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-24T23:52:53.638Z\",\n                \"updatedAt\": \"2022-05-25T01:17:14.367Z\",\n                \"__v\": 0,\n                \"read_status\": true\n            },\n            {\n                \"_id\": \"628d6fd7ba190b76312cdbf2\",\n                \"contents\": \"How are u doing\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-24T23:52:55.715Z\",\n                \"updatedAt\": \"2022-05-25T01:17:14.367Z\",\n                \"__v\": 0,\n                \"read_status\": true\n            },\n            {\n                \"_id\": \"628d6fd8ba190b76312cdbf4\",\n                \"contents\": \"How are u doing\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-24T23:52:56.748Z\",\n                \"updatedAt\": \"2022-05-25T01:17:14.367Z\",\n                \"__v\": 0,\n                \"read_status\": true\n            },\n            {\n                \"_id\": \"628d70339c5bc38fcbe492ad\",\n                \"contents\": \"How are u doing\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-24T23:54:27.167Z\",\n                \"updatedAt\": \"2022-05-25T01:17:14.367Z\",\n                \"__v\": 0,\n                \"read_status\": true\n            },\n            {\n                \"_id\": \"628d709c9c5bc38fcbe492af\",\n                \"contents\": \"How are u doing\",\n                \"read_at\": \"\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"read_status\": true,\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-24T23:56:12.541Z\",\n                \"updatedAt\": \"2022-05-25T01:17:14.367Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d765de9c9579d09371d98\",\n                \"contents\": \"How are u doing\",\n                \"read_at\": \"\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"read_status\": true,\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-25T00:20:45.711Z\",\n                \"updatedAt\": \"2022-05-25T01:17:14.367Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d76cfcc85142b474332d3\",\n                \"contents\": \"How are u doing\",\n                \"read_at\": \"\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"read_status\": true,\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-25T00:22:39.676Z\",\n                \"updatedAt\": \"2022-05-25T01:17:14.367Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d788c39768ece0dba89d9\",\n                \"contents\": \"How are u doing\",\n                \"read_at\": \"\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"read_status\": true,\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-25T00:30:04.524Z\",\n                \"updatedAt\": \"2022-05-25T01:17:14.367Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d7a02614b27488dac1552\",\n                \"contents\": \"How are u doing\",\n                \"read_at\": \"\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"read_status\": true,\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-25T00:36:18.438Z\",\n                \"updatedAt\": \"2022-05-25T01:17:14.367Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d7c33daeb9d1d5bd39066\",\n                \"contents\": \"How are u doing\",\n                \"read_at\": \"\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"read_status\": true,\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-25T00:45:39.776Z\",\n                \"updatedAt\": \"2022-05-25T01:17:14.367Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"628d7daf09996e0218ba4096\",\n                \"contents\": \"How are u doing\",\n                \"read_at\": \"\",\n                \"from_user\": \"628d6363673dd546070f85fe\",\n                \"to_user\": \"628d63ab673dd546070f8602\",\n                \"read_status\": true,\n                \"conversationId\": \"628d66d874c8d23ffdf6aa31\",\n                \"createdAt\": \"2022-05-25T00:51:59.137Z\",\n                \"updatedAt\": \"2022-05-25T01:17:14.367Z\",\n                \"__v\": 0\n            }\n        ],\n        \"error\": false,\n        \"statusCode\": 200\n    },\n    \"message\": \"\",\n    \"status\": 200,\n    \"statusText\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Mark As read",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"628d6363673dd546070f85fe\",\r\n    \"adversary_id\": \"628d63ab673dd546070f8602\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/message/mark/all_read",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"message",
+						"mark",
+						"all_read"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
