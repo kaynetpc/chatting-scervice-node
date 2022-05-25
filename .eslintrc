@@ -1,0 +1,19 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "google"
+    ], 
+    "rules": {
+        "no-console":"warn",
+        "linebreak-style": "off",
+        "new-cap": "off",
+        "max-len": ["error", {"code": 150}]
+    }
+}
