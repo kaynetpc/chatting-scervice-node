@@ -58,10 +58,7 @@ export default class UserService {
 
         return {message: 'User created', statusCode: 201, data: result, error: false};
       } catch (error) {
-        console.log(`
-            data:::: 
-            ${JSON.stringify(error)}  
-          `);
+        return {message: 'Error occur', statusCode: 500, data: error, error: true}        
       }
     } catch (error: any) {
       throw ResponseError.get(error);

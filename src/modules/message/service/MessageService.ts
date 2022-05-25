@@ -31,25 +31,14 @@ export default class MessageService {
     try {
       const data = await MessageRepository.create(param);
       if (data) {
-        console.log(`
-                FFFF:::: ${JSON.stringify(param)}
-    
-                GGGGG:::: ${JSON.stringify(data)}
-                `);
-      } else {
-        console.log(`
-                FAIL:::: ${JSON.stringify(param)}
-    
-                FAIL:::: ${JSON.stringify(data)}
-                `);
+          const result: IResponseFormat = {
+            message: 'Message sent',
+            data: data,
+            error: false,
+            statusCode: 200,
+          };
+          return result;
       }
-      const result: IResponseFormat = {
-        message: 'Message sent',
-        data: data,
-        error: false,
-        statusCode: 200,
-      };
-      return result;
     } catch (error: any) {
       throw ResponseError.get(error);
     }
