@@ -19,8 +19,10 @@ export default class MessageRepository {
     return await MessageModel.find({to_user: data.receiver, from_user: data.sender});
   }
 
-  static async findBySenderAndReceiverAndDateCreate(data: {sender: any, receiver: any, date: Date}) {
-    return await MessageModel.find({to_user: data.receiver, from_user: data.sender, created_at: data.date});
+  static async findBySenderAndReceiverAndDateCreate(data:
+    {sender: any, receiver: any, date: Date}) {
+    return await MessageModel.find({to_user: data.receiver,
+      from_user: data.sender, created_at: data.date});
   }
 
   static async findAllMessages(conversationId: any) {

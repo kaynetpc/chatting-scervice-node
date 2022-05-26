@@ -1,6 +1,6 @@
 import ResponseError from '../../../response/ResponseError';
 import MessageRepository from '../repo/MessageRepo';
-import {IResponseFormat, ResponseService} from '../../../response/ResponseService';
+import {IResponseFormat} from '../../../response/ResponseService';
 import {IMessageData, IMassageAction} from '../interface/message.types';
 export default class MessageService {
   // fetch messages
@@ -31,13 +31,13 @@ export default class MessageService {
     try {
       const data = await MessageRepository.create(param);
       if (data) {
-          const result: IResponseFormat = {
-            message: 'Message sent',
-            data: data,
-            error: false,
-            statusCode: 200,
-          };
-          return result;
+        const result: IResponseFormat = {
+          message: 'Message sent',
+          data: data,
+          error: false,
+          statusCode: 200,
+        };
+        return result;
       }
     } catch (error: any) {
       throw ResponseError.get(error);
@@ -62,8 +62,11 @@ export default class MessageService {
   static async markTodayMessagesAsRead(param: IMassageAction): Promise<IResponseFormat> {
     try {
       const currentDate = new Date();
-      const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
-      const data = await MessageRepository.findBySenderAndReceiverAndDateCreate({receiver: param.adversary_id, sender: param.user_id, date: date});
+      const date = new Date(currentDate.getFullYear(),
+          currentDate.getMonth(), currentDate.getDate());
+      const data = await MessageRepository
+          .findBySenderAndReceiverAndDateCreate({
+            receiver: param.adversary_id, sender: param.user_id, date: date});
       if (data) {
         const modifiedData = updateArrayObject(data, 'read_status', true);
         const updatedData = await MessageRepository.createMany(modifiedData);

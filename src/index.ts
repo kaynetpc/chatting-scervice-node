@@ -4,13 +4,14 @@ import App from './app';
 import {AppConfigs} from './config/app';
 import {connectDB} from './config/db';
 import {ClientToServerEvents,
-   ServerToClientEvents, InterServerEvents, SocketData} from './socket.io.types';
+  ServerToClientEvents, InterServerEvents, SocketData} from './socket.io.types';
 
 const port = AppConfigs.SERVER_PORT;
 
 
 export const appServer = http.createServer(App);
-export const io = new Server<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>();
+export const io =
+   new Server<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>();
 
 appServer.listen(port, async () => {
   console.log('App listing on port '+port);

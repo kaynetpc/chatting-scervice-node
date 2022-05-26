@@ -7,19 +7,19 @@ import {ILoginRequest} from '../interface/login.req.types';
 import {IMessageRequest} from '../interface/message.req.types';
 import {IConversationData} from '../modules/conversation/interface/conversations.types';
 import {IMassageAction} from '../modules/message/interface/message.types';
-import { AppRoutes } from '../routes/routes';
-import { AppConfigs } from '../config/app';
+import {AppRoutes} from '../routes/routes';
+import {AppConfigs} from '../config/app';
 
 const AppController = express.Router();
 
 /** 1 Demonstrate a request/response to authenticate with your API:  */
 // Login Api
-AppController.post(AppRoutes.LOGIN,  async (req: Request, res: Response) => {
+AppController.post(AppRoutes.LOGIN, async (req: Request, res: Response) => {
   try {
     const request: ILoginRequest = req.body;
     const response = await MainService.auth(request);
     res.cookie(AppConfigs.COOKIE_PARSER_KEY, 'd');
-    res.location('/')
+    res.location('/');
     return ResponseService(res, response, 200);
   } catch (error) {
     return ResponseService(res, error, 500);

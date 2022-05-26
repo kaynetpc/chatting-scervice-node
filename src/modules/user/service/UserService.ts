@@ -4,8 +4,7 @@ import UserRepository from '../repo/UserRepo';
 import {ILoginRequest} from '../../../interface/login.req.types';
 import ResponseError from '../../../response/ResponseError';
 import {AppConfigs} from '../../../config/app';
-import {ResponseService, IResponseFormat} from '../../../response/ResponseService';
-import {IRegisterRequest} from '../../../interface/rehister.req.types';
+import {IResponseFormat} from '../../../response/ResponseService';
 import {IUserData} from '../interface/user.req.types';
 export default class UserService {
   /** Login */
@@ -58,7 +57,7 @@ export default class UserService {
 
         return {message: 'User created', statusCode: 201, data: result, error: false};
       } catch (error) {
-        return {message: 'Error occur', statusCode: 500, data: error, error: true}        
+        return {message: 'Error occur', statusCode: 500, data: error, error: true};
       }
     } catch (error: any) {
       throw ResponseError.get(error);
@@ -71,7 +70,8 @@ export default class UserService {
       // Check if user exist
       const user = await UserRepository.findById(id);
       if (!user) {
-        return {message: 'User not fount', statusCode: ResponseError.NOT_FOUND, data: null, error: false};
+        return {message: 'User not fount',
+          statusCode: ResponseError.NOT_FOUND, data: null, error: false};
       }
       return {message: 'User Retrieved', statusCode: 200, data: user, error: false};
     } catch (error: any) {

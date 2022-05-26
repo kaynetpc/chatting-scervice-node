@@ -1,10 +1,10 @@
 import MessageService from './MessageService';
 
-const conversationId = '628d66d874c8d23ffdf6aa31'
+const conversationId = '628d66d874c8d23ffdf6aa31';
 test('It should Retrieve Messages',
-() => {
-    const res = await MessageService.getMessages(conversationId);
-  expect(res.error).toBe(false)
-})
+    () => {
+      const res = await MessageService.getMessages(conversationId);
+      expect(res.error).toBe(false);
+    });
 
 
